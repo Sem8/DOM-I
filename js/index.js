@@ -45,12 +45,25 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 let navItems = document.querySelectorAll('nav a');
 // console.log(navItems);
+// navItems.style.color = 'green';
+
 navItems[0].textContent = siteContent['nav']['nav-item-1'];
 navItems[1].textContent = siteContent['nav']['nav-item-2'];
 navItems[2].textContent = siteContent['nav']['nav-item-3'];
 navItems[3].textContent = siteContent['nav']['nav-item-4'];
 navItems[4].textContent = siteContent['nav']['nav-item-5'];
 navItems[5].textContent = siteContent['nav']['nav-item-6'];
+
+navItems.forEach( element => {
+  //console.log(element);
+  element.style.color = "green"; 
+});
+
+// document.getElementsByTagName('a').style.color = 'green';
+// console.log(navAnchor);
+
+// navAnchor.style.color = 'green';
+
 
 
 /* SETTING THE CTA h1 TEXT */
@@ -100,20 +113,41 @@ let middleImg = document.getElementById('middle-img');
 middleImg.src = siteContent['main-content']['middle-img-src'];
 
 /* SET BOTTOM CONTENT */
+// service title
 let serviceTitle = document.querySelector('.bottom-content h4');
 serviceTitle.innerHTML = siteContent['main-content']['services-h4'];
+// service content
 let serviceContent = document.querySelector('.bottom-content p');
 serviceContent.innerHTML = siteContent['main-content']['services-content'];
 
+// set product title and content
 let productTitle = document.querySelectorAll('.bottom-content h4');
 productTitle[1].innerHTML = siteContent['main-content']['product-h4'];
 let productContent = document.querySelectorAll('.bottom-content p');
 productContent[1].innerHTML = siteContent['main-content']['product-content'];
 
-
+// set vision title and content
 let visionTitle = document.querySelectorAll('.bottom-content h4');
 visionTitle[2].innerHTML = siteContent['main-content']['vision-h4'];
-
 let visionContent = document.querySelectorAll('.bottom-content p');
 visionContent[2].innerHTML = siteContent['main-content']['vision-content'];
+
+// set contact
+
+let contactTitle = document.querySelector('.contact h4');
+contactTitle.innerHTML = siteContent['contact']['contact-h4'];
+
+let contactInfo = document.querySelectorAll('.contact p');
+// contactInfo[0].insertBefore(lineBreak, contactInfo.childNodes[0]);
+contactInfo[0].textContent = siteContent['contact']['address'];
+console.log(contactInfo);
+contactInfo[1].textContent = siteContent['contact']['phone'];
+contactInfo[2].textContent = siteContent['contact']['email'];
+
+// set footer
+
+let footerInfo = document.querySelector('footer p');
+footerInfo.textContent = siteContent['footer']['copyright'];
+
+
 
