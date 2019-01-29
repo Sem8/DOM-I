@@ -42,10 +42,15 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 /* SETTING THE NAVIGATION ITEMS */
+let newAnchorOne = document.createElement('a');
+newAnchorOne.textContent = 'Blog';
+
+let newAnchorTwo = document.createElement('a');
+newAnchorTwo.textContent = 'Careers';
+
 
 let navItems = document.querySelectorAll('nav a');
-// console.log(navItems);
-// navItems.style.color = 'green';
+
 
 navItems[0].textContent = siteContent['nav']['nav-item-1'];
 navItems[1].textContent = siteContent['nav']['nav-item-2'];
@@ -54,15 +59,21 @@ navItems[3].textContent = siteContent['nav']['nav-item-4'];
 navItems[4].textContent = siteContent['nav']['nav-item-5'];
 navItems[5].textContent = siteContent['nav']['nav-item-6'];
 
+navItems[0].prepend(newAnchorOne);
+navItems[5].append(newAnchorTwo);
+newAnchorOne.style.color = 'green';
+newAnchorTwo.style.color = 'green';
+newAnchorOne.style.padding = '0px 30px';
+newAnchorTwo.style.padding = '0px 30px';
+
 navItems.forEach( element => {
   //console.log(element);
   element.style.color = "green"; 
 });
 
-// document.getElementsByTagName('a').style.color = 'green';
-// console.log(navAnchor);
+// const newDiv = document.createElement("div");
 
-// navAnchor.style.color = 'green';
+
 
 
 
