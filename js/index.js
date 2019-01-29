@@ -59,31 +59,27 @@ navItems[3].textContent = siteContent['nav']['nav-item-4'];
 navItems[4].textContent = siteContent['nav']['nav-item-5'];
 navItems[5].textContent = siteContent['nav']['nav-item-6'];
 
-navItems[0].prepend(newAnchorOne);
+
+navItems[5].prepend(newAnchorOne);
 navItems[5].append(newAnchorTwo);
+
 newAnchorOne.style.color = 'green';
 newAnchorTwo.style.color = 'green';
-newAnchorOne.style.padding = '0px 30px';
-newAnchorTwo.style.padding = '0px 30px';
+newAnchorOne.style.padding = '0px 30px 0px 0px';
+newAnchorTwo.style.padding = '0px 25px';
 
 navItems.forEach( element => {
   //console.log(element);
   element.style.color = "green"; 
 });
 
-// const newDiv = document.createElement("div");
-
-
-
 
 
 /* SETTING THE CTA h1 TEXT */
 let ctaSection = document.querySelector('.cta-text h1');
-let lineBreak = document.createElement('br');
-ctaSection.insertBefore(lineBreak, ctaSection.childNodes[0]);
-console.log(ctaSection);
+
 let ctaText = document.querySelector('.cta h1')
-ctaText.innerHTML = siteContent['cta']['h1'];
+ctaText.innerHTML = 'DOM<br> Is<br> Awesome';
 console.log(ctaText);
 
 
@@ -150,7 +146,8 @@ contactTitle.innerHTML = siteContent['contact']['contact-h4'];
 
 let contactInfo = document.querySelectorAll('.contact p');
 // contactInfo[0].insertBefore(lineBreak, contactInfo.childNodes[0]);
-contactInfo[0].textContent = siteContent['contact']['address'];
+// contactInfo[0].textContent = siteContent['contact']['address'];
+contactInfo[0].innerHTML = '123 Way 456 Street<br>Somewhere, USA';
 console.log(contactInfo);
 contactInfo[1].textContent = siteContent['contact']['phone'];
 contactInfo[2].textContent = siteContent['contact']['email'];
@@ -159,6 +156,17 @@ contactInfo[2].textContent = siteContent['contact']['email'];
 
 let footerInfo = document.querySelector('footer p');
 footerInfo.textContent = siteContent['footer']['copyright'];
+
+
+let newDiv = document.createElement('div');
+newDiv.className = 'Join-us';
+newDiv.textContent = `Careers: Join Us! We're always hiring`
+console.log(newDiv);
+let contactSection = document.querySelector('.contact');
+contactSection.append(newDiv);
+
+newDiv.style.fontWeight = 'bold';
+newDiv.style.fontSize = '1.4rem';
 
 
 
